@@ -32,15 +32,32 @@ During two weeks, i want to train image(carNumber) if u want to train anything i
 
 
   4. darknet/cfg/yolov4.cfg copy and rename (yolo-obj.cfg)
+
+
      -in ws : mkdir backup
+     
+     
      -mkdir data
+     
+     
      -gedit data/obj.data -> classes = 1, train = data/train.txt, valid = data/train.txt, names = data/obj.names backup = backup/
+     
+     
      -copy : Yolo_mark/train.txt -> to ws/data
+     
            : Yolo_mark/obj.names -> to ws/data
+           
+           
      -modify : yolo-obj.cfg -> batch = 64, subdivisions = 64 width,height =416
+     
              : max_batches = 2000 (max_batches = class * classCount)
+             
              : steps : (max_batches's 80%),(max_batches's 90%)
+             
              : ctrl + f -> yolo u can find (1/3) classes =1 modify && filters = 18(filters=(classes + 5)*3)
+             
+             
+             
      -download : yolov4's pretrain model  & ws/ (save here) 
        wget  https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.conv.137 
        
