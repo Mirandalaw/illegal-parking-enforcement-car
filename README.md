@@ -3,6 +3,7 @@ During two weeks, i want to train image(carNumber) if u want to train anything i
 
 
 1.opencv 4.2.0 , CUDA 11.2 cuDNN 8.2.0 , yolov4 , Ubuntu 18.04
+
 2. darnknet install
  -git clone https://github.com/AlexeyAB/darknet.git
  -Makefile(setting info) GPU = 1, CUDNN = 1, CUDNN_HALF = 0 , OPENCV = 1,LIBSO = 1 
