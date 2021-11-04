@@ -15,10 +15,12 @@ During two weeks, i want to train image(carNumber) if u want to train anything i
  - webcam : ./darknet detector demo cfg/coco.data cfg/yolov4.cfg yolov4.weights -c 0
    *error : "cuDNN Error: CUDNN_STATUS_EXECUTION_FAILED" we should do "sudo reboot"
   
-  ***import*** (custom data train)
+  ***important*** (custom data train)
   
   1. mkdir ws &&cd ws &&mkdir img
+   
   2. u want to train data that u can save data-set
+ 
   3. image anotation tool ( YOLO_mark )
      - git clone https://github.com/AlexeyAB/Yolo_mark.git
      - cd Yolo_mark
@@ -27,6 +29,8 @@ During two weeks, i want to train image(carNumber) if u want to train anything i
      - gedit obj.names
      - cat obj.names (u can see : carNumber)
      - ./yolo_mark ~/ws/img/ ./train.txt ./obj.names
+
+
   4. darknet/cfg/yolov4.cfg copy and rename (yolo-obj.cfg)
      -in ws : mkdir backup
      -mkdir data
@@ -39,6 +43,12 @@ During two weeks, i want to train image(carNumber) if u want to train anything i
              : ctrl + f -> yolo u can find (1/3) classes =1 modify && filters = 18(filters=(classes + 5)*3)
      -download : yolov4's pretrain model  & ws/ (save here) 
        wget  https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.conv.137 
+       
+       
  5. train start : ~/ws$./darknet detector train data/obj.data yolo-obj.cfg yolov4.conv.137 
- 6. complete train : ./darknet detector test data/obj.data yolo-obj.cfg backup/yolo-obj_final.weights carNumber.jpg 
+
+
+ 7. complete train : ./darknet detector test data/obj.data yolo-obj.cfg backup/yolo-obj_final.weights carNumber.jpg 
+
+
  참고 :  https://webnautes.tistory.com/1482
