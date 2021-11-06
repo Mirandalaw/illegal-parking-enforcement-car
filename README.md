@@ -3,7 +3,8 @@ During two weeks, i want to train image(carNumber) if u want to train anything i
 
 
 1.status 
-  RTX 3060
+  Graphic RTX 3060
+ 
  : opencv 4.2.0 , CUDA 11.2 cuDNN 8.2.0 , yolov4 , Ubuntu 18.04
 
 
